@@ -146,7 +146,7 @@
 	border-radius: 50%;
 	animation: animateC 2s linear infinite;
 }
-span {
+/* span {
 	display: block;
 	position: absolute;
 	top: calc(50% - 2px);
@@ -167,7 +167,7 @@ span:before {
 	top: -6px;
 	right: -8px;
 	box-shadow: 0 0 20px #fff000;
-}
+} */
 @keyframes animateC {
 	0% {
 		transform: rotate(0deg);
@@ -182,69 +182,5 @@ span:before {
 	}
 	100% {
 		transform: rotate(405deg);
-	}
-}
-
-.loader {
-	width: 150px;
-	height: 150px;
-}
-svg {
-	width: 90%;
-	fill: none;
-}
-.load {
-	transform-origin: 50% 50%;
-	stroke-dasharray: 570;
-	stroke-width: 20px;
-}
-.load.one {
-	stroke: #476a2e;
-	animation: load 1.5s infinite;
-}
-.load.two {
-	stroke: #85b363;
-	animation: load 1.5s infinite;
-	animation-delay: 0.1s;
-}
-.load.three {
-	stroke: #d4e6a5;
-	animation: load 1.5s infinite;
-	animation-delay: 0.2s;
-}
-.point {
-	animation: bounce 1s infinite ease-in-out;
-}
-.point.one {
-	fill: #476a2e;
-	animation-delay: 0s;
-}
-.point.two {
-	fill: #85b363;
-	animation-delay: 0.1s;
-}
-.point.three {
-	fill: #d4e6a5;
-	animation-delay: 0.2s;
-}
-@keyframes bounce {
-	0%,
-	100% {
-		transform: translateY(0);
-	}
-	50% {
-		transform: translateY(-20px);
-	}
-}
-@keyframes load {
-	0% {
-		stroke-dashoffset: 570;
-	}
-	50% {
-		stroke-dashoffset: 530;
-	}
-	100% {
-		stroke-dashoffset: 570;
-		transform: rotate(360deg);
 	}
 }

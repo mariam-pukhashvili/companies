@@ -4,6 +4,7 @@ import { CountriesList } from "../../data/CountriesList";
 import { getCountries } from "../../services";
 import { debounce } from "../../helpers/debounce";
 import Loader from "../../components/loader";
+import FilterCountry from '../../components/filtercountry';
 
 
 function Homepage() {
@@ -12,7 +13,7 @@ function Homepage() {
 	const [countries, setCountries]=useState([]);
 	const [loading, setLoading] = useState(true);
 
-	const loadCocktails = useCallback(async () => {
+	const loadCountries = useCallback(async () => {
 		const countriesList = await getCountries();
 		setCountries(countriesList);
 	}, [countries]);
@@ -20,7 +21,7 @@ function Homepage() {
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setLoading(false);
-			loadCocktails();
+			loadCountries();
 		}, 1000);
 		return () => {
 			clearTimeout(timer);
@@ -28,26 +29,18 @@ function Homepage() {
 	}, []);
 
 
-	const rendercocktails = () => {
-		return <CountriesList data={countries} />;
+	const rendercountries = () => {
+
+
+		return <FilterCountry countrydata={countries}/>
 	};
+	console.log(loading);
 	return (
 		<div className="container m-auto w-75 mt-5">
-			<div className="col-12 mb-4">
-				{/* <div className="col-12 shadow search p-5 row m-0">
-					<h5> Search Your Favorite Cocktail </h5>
-					<input
-						type="search"
-						className="form-control"
-						placeholder="start typing..."
-						name="searchTerm"
-						
-					/>
-				</div> */}
-				{/* <h3 className="myTitle display-6">Countries</h3> */}
-			</div>
-			<div className="col-12">{rendercocktails()}</div>
 
+			<div className="col-12">{loading ? <Loader /> : rendercountries()}</div>
+
+			
 			<div className="col-12">
 				{/* {!loading && state.empty ? <EmptyData /> : ""} */}
 			</div>
