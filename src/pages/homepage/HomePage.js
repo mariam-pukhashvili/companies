@@ -34,13 +34,10 @@ function Homepage() {
 
 		return <FilterCountry countrydata={countries}/>
 	};
-	console.log(loading);
+	
 	return (
 		<div className="container m-auto w-75 mt-5">
-
-			<div className="col-12">{loading ? <Loader /> : rendercountries()}</div>
-
-			
+			<div className="col-12">{loading ? <Loader /> : rendercountries()}</div>	
 			<div className="col-12">
 				{/* {!loading && state.empty ? <EmptyData /> : ""} */}
 			</div>

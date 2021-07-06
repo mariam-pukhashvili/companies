@@ -184,3 +184,7 @@ span:before {
 		transform: rotate(405deg);
 	}
 }
+
+.detailsbutton {
+	letter-spacing: 2px;
+}

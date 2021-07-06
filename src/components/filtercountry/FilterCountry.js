@@ -1,8 +1,8 @@
-import { useCallback,useEffect,useReducer, useState } from "react";
+import { useEffect,useReducer, useState } from "react";
 import { BsChevronDown , BsChevronUp} from "react-icons/bs";
 import CountriesList from "../../data/CountriesList";
 import { debounce } from "../../helpers/debounce";
-import Loader from "../../components/loader";
+
 
 
 const SET_COUNTRIES = "SET_COUNTRIES";
@@ -92,7 +92,7 @@ function FilterCountry({countrydata}){
     return (
         <div className="col-12 text-start p-2 mb-3">
 
-            Searc Country <ComponentName onClick={() => {
+            Search Country <ComponentName onClick={() => {
              SetShow((prev)=>!prev);
             }}/>
              
